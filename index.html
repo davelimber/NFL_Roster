@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>NFL Roster Project</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+    <script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+    <link href="style.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+</head>
+
+<body>
+
+
+    <div class="container">
+
+        <!--display players -->
+
+        <div class="row">
+            <div class="player-roster">
+
+                <div class="player-card">
+                    <div class="col-md-2">
+                        <img src="http://s.nflcdn.com/static/content/public/image/fantasy/transparent/200x200/" alt="football player " class="img-thumbnail"> 
+                             Name<br>
+                            
+                            Position<br>
+                            
+                            Player Number<br>
+
+                    </div>
+                    <!--<div class="col-md-2">
+              <img src="http://s.nflcdn.com/static/content/public/image/fantasy/transparent/200x200/" alt="football player " class="img-thumbnail ">
+
+                       
+                            Name<br>
+                            
+                            Position<br>
+                            
+                            Player Number<br>
+                </div>
+                <div class="col-md-2">
+                    <img src="http://s.nflcdn.com/static/content/public/image/fantasy/transparent/200x200/" alt="football player " class="img-thumbnail ">
+    
+                     
+                            Name<br>
+                            
+                            Position<br>
+                            
+                            Player Number<br>
+
+                </div>-->
+
+                </div>
+            </div>
+
+            <!--add player form-->
+
+            <div class=" player-form">
+                <form class="form-horizontal">
+                    <div class="form-group">
+                        <label for="playerName" class="col-sm-2 control-label">Player Name</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" name="playerName" placeholder="Player Name" required\>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="playerPosition" class="col-sm-2 control-label">Password</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" name="playerPosition" placeholder="Player Postion" required\>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="playerNumber" class="col-sm-2 control-label">Player Number</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" name="playerNumber" placeholder="Player Number" required\>
+                        </div>
+                    </div>
+            </div>
+            <div class="form-group ">
+                <div class="col-sm-offset-2 col-sm-10 ">
+                    <button type="submit " class="btn btn-default ">Add</button>
+                </div>
+            </div>
+            </form>
+
+
+
+        </div>
+
+
+
+    </div>
+
+
+
+
+    <script src="app.js "></script>
+</body>
+
+</html>
