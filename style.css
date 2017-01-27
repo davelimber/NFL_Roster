@@ -1,6 +1,9 @@
 
 
-
+.player-roster {
+     display: inline-block;
+    border: 1px solid black;
+}
 
 
 .player-card {
@@ -14,7 +17,7 @@ body {
 }
 
 h4 {
-  margin-top: 25px;
+  margin-top: 10px;
 }
 .row {
   margin-bottom: 20px;
