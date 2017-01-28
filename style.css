@@ -12,6 +12,10 @@
     
 }
 
+.img {
+    width: 30%;
+}
+
 body {
     background-color: lightblue;
 }
