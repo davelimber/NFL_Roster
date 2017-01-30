@@ -6,68 +6,70 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>NFL Roster Project</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
-   
+
     <link href="style.css" rel="stylesheet">
-    
+
 
 </head>
 
 <body>
 
+    <div class="container">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">Fantasy Football Roster!</h4>
+            </div>
+            <br>
 
-    <div class="container player-roster">
-
-        <!--display players -->
-
-        <div class="row">
-            
-                <!--<div class="player-roster">-->
-                    <!--<div class="player-card">-->
-                
-                        <div id="player-card"></div>                      
-                   
-                   <!--</div>-->
+            <div class="panel-body">
+                <div class="player-roster panels" id="player-card">
+                    <div class="player-card">
+                        <img src="http://s.nflcdn.com/static/content/public/image/fantasy/transparent/200x200/" alt="">
+                        <h4>Player Name</h4>
+                        <h4>Position</h4>
+                        <h4>Number</h4>
+                    </div>
                 </div>
-            
-</div>
-            <!--add player form-->
-
-
-            <div class=" player-form">
-                <form class="form-horizontal" onsubmit="playersCtrl.addPlayer(event)">
-<div class="form-group">
-    <label for="playerName" class="col-sm-2 control-label">Player Name</label>
-    <div class="col-sm-4">
-        <input type="text" class="form-control" name="playerName" placeholder="Player Name" required/>
+                <br>
+                <br>
+                <br>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        Add Player
+                    </div>
+                    <div class="panel-body">
+                        <div class="player-form panels">
+                            <form onsubmit="playersCtrl.addPlayer(event)">
+                                <input type="text" name="playerName" required placeholder="Name*">
+                                <input type="text" name="playerPosition" required placeholder="Position*">
+                                <input type="text" name="playerNumber" required placeholder="Number*">
+                                <input type="text" name="playerImage" placeholder="Photograph">
+                                <input type="submit">
+                                <h7>* Are required fields</h7>
+                            </form>
+                             </div>
+                        </div>
+                            <div class="panel-heading">
+                              Show Players by Position
+                            </div>
+                             <div class="panel-body">
+                                  <div class="player-form panels">
+                            <form onsubmit="playersCtrl.showPlayers(event)">
+                                <input type="text" name="positionRequested" required placeholder="Position Needed">
+                                   <input type="submit">
+                            </form>
+                                  </div>
+                            
+                </div>
+            </div>
+        </div>
     </div>
 </div>
-<div class="form-group">
-    <label for="playerPosition" class="col-sm-2 control-label">Password</label>
-    <div class="col-sm-4">
-        <input type="text" class="form-control" name="playerPosition" placeholder="Player Postion" required/>
-    </div>
-</div>
-<div class="form-group">
-    <label for="playerNumber" class="col-sm-2 control-label">Player Number</label>
-    <div class="col-sm-4">
-        <input type="text" class="form-control" name="playerNumber" placeholder="Player Number" required/>
-    </div>
-</div>
-</div>
-<div class="form-group ">
-    <div class="col-sm-offset-2 col-sm-4 ">
-        <button type="submit " class="btn btn-default ">Add</button>
-    </div>
-</div>
-</form>
 
 
 
 
 
-<!--divs for row and container-->
-</div>
-</div>
 
 
 <script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
