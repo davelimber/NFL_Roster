@@ -15,7 +15,7 @@ function PlayersController() {
     var pservice = playerService;
     this.ptest = pservice;
 
-    function ready() {
+    function ready() { 
         loading = false; //stop the spinner
         console.log('in the ready function');
         // debugger
@@ -27,6 +27,7 @@ function PlayersController() {
         //     var teamSF = playerService.getPlayersByTeam("SF");
         // })
     };
+
 
     this.teamSF =  function teamSF () {
         debugger
