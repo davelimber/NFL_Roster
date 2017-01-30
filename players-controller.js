@@ -28,10 +28,11 @@ function PlayersController() {
         // })
     };
 
-    // this.teamSF =  function () {
-    //     var teamSF = playerService.getPlayersByTeam("SF");
-    //     console.log(teamSF);
-    // };
+    this.teamSF =  function teamSF () {
+        debugger
+        var teamSF = playerService.getPlayersByTeam("SF");
+        console.log(teamSF);
+    };
 
     this.addPlayer = function addPlayer(e) {
         event.preventDefault();
@@ -67,34 +68,35 @@ function PlayersController() {
 
 // Uncomment section to activate
 
-//     this.getQB = function getQB() {
-//         var playersOnTeam = pservice.getPlayersByPosition("QB");
-//         // console.log(playersOnTeam);
-//     }
+    // this.getQB = function getQB() {
+    //     var playersOnTeam = pservice.getPlayersByPosition("QB");
+    //     // console.log(playersOnTeam);
+    // }
 
-//     this.showPlayers = function showPlayers(e) {
-//         event.preventDefault();
+    this.showPlayers = function showPlayers(e) {
+        event.preventDefault();
+
+        var form = event.target
+        var position = form['positionRequested'].value;
+        var playersOnTeam = pservice.getPlayersByPosition(position);
 // debugger
-//         var form = event.target
-//         var position = form['positionRequested'].value;
-//         var playersOnTeam = pservice.
+        var playerElement = document.getElementById('player-card');
+        playerElement.innerHTML = '';
+        var template = ``;
+        var counter = 0;
 
-//         var playerElement = document.getElementById('player-card');
-//         playerElement.innerHTML = '';
-//         var template = ``;
-//         var counter = 0;
-
-//         for (player of playersOnTeam) {
-//             console.log(player);
-//             template +=
-//                 `<div class="player-card"> 
-//                 <img src=${player.photo} alt="football player" class="img">
-//                 <h4><center>${player.name}</h4>
-//                 <h4>${player.position}</h4>
-//                 <h4>${player.number}</h4> 
-//                 </div>`
-//             counter++;
-//         } playerElement.innerHTML += template;
+        for (player of playersOnTeam) {
+            console.log(player);
+            template +=
+                `<div class="player-card"> 
+                <img src=${player.photo} alt="football player" class="img" style="width:200px;height:200px;">
+                <h4>${player.fullname}</h4>
+                <h4>${player.position}</h4>
+                <h4>${player.jersey}</h4>
+                <h4>${player.pro_team}</h4> 
+                </div>`
+            counter++;
+        } playerElement.innerHTML += template;
         
-//     }
+    }
 };
