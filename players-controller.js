@@ -9,13 +9,13 @@ function PlayersController() {
     // get a players from SF
 
     var loading = true; //Start the spinner
-    var apiUrl = "http://api.cbssports.com/fantasy/players/list?version=3.0&SPORT=football&response_format=json";
+    var apiUrl = "https://api.cbssports.com/fantasy/players/list?version=3.0&SPORT=football&response_format=json";
     var playerService = new PlayersService(apiUrl, ready);
 
     var pservice = playerService;
     this.ptest = pservice;
 
-    function ready() {
+    function ready() { 
         loading = false; //stop the spinner
         console.log('in the ready function');
         // debugger
@@ -27,6 +27,7 @@ function PlayersController() {
         //     var teamSF = playerService.getPlayersByTeam("SF");
         // })
     };
+
 
     this.teamSF =  function teamSF () {
         debugger
