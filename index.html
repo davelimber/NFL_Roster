@@ -3,30 +3,30 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>NFL Roster Project</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
-    <script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+   
     <link href="style.css" rel="stylesheet">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    
 
 </head>
 
 <body>
 
 
-    <div class="container">
+    <div class="container player-roster">
 
         <!--display players -->
 
         <div class="row">
             
-                <div class="player-roster">
-                    <div class="player-card">
+                <!--<div class="player-roster">-->
+                    <!--<div class="player-card">-->
                 
-                        <p id="player-card"></p>                      
+                        <div id="player-card"></div>                      
                    
-                   </div>
+                   <!--</div>-->
                 </div>
             
 </div>
@@ -34,7 +34,7 @@
 
 
             <div class=" player-form">
-                <form class="form-horizontal" onsubmit="addPlayer(event)">
+                <form class="form-horizontal" onsubmit="playersCtrl.addPlayer(event)">
 <div class="form-group">
     <label for="playerName" class="col-sm-2 control-label">Player Name</label>
     <div class="col-sm-4">
@@ -70,8 +70,9 @@
 </div>
 
 
-
-
+<script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+<script src="players-service.js "></script>
+<script src="players-controller.js "></script>
 <script src="app.js "></script>
 </body>
 
