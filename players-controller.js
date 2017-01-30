@@ -89,7 +89,7 @@ function PlayersController() {
             console.log(player);
             template +=
                 `<div class="player-card"> 
-                <img src=${player.photo} alt="football player" class="img" style="width:200px;height:200px;">
+         //       <img src=${player.photo} alt="football player" class="img" style="width:200px;height:200px;">
                 <h4>${player.fullname}</h4>
                 <h4>${player.position}</h4>
                 <h4>${player.jersey}</h4>
