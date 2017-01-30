@@ -88,9 +88,9 @@ function PlayersController() {
         for (player of playersOnTeam) {
             console.log(player);
             template +=
-                `<div class="player-card"> 
+                `<div class="player-card"> `+
          //       <img src=${player.photo} alt="football player" class="img" style="width:200px;height:200px;">
-                <h4>${player.fullname}</h4>
+             `   <h4>${player.fullname}</h4>
                 <h4>${player.position}</h4>
                 <h4>${player.jersey}</h4>
                 <h4>${player.pro_team}</h4> 
