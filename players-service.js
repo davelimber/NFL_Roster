@@ -2,7 +2,24 @@
 
 function PlayersService(endpointUri, callback) {
     var playersData = [];
-    returnedData = [{ name: "test" }]
+    var ListOfPlayers = [];
+
+    function ListOfPlayers(name, position, number, image) {
+        this.name = name;
+        this.position = position;
+        this.number = number;
+        this.image = image;
+
+    }
+
+    this.addNewPlayerByPosition = function (name, post, number, image) {
+        for (position of playersData) {
+            if (post == position) {
+                var newPlayer = new ListOfPlayers(name, post, number, image);
+                ListOfPlayers.push(newPlayer);
+            }
+        }
+    }
 
     this.getPlayersByTeam = function (teamName) {
         // var filteredPlayers = [];
@@ -15,22 +32,30 @@ function PlayersService(endpointUri, callback) {
         // }
 
         // // console.log(teamName);
-        playersData.filter(function (player) {
+        playersData.filter(function (players) {
             // console.log(player.pro_team);
-            if (playersData.pro_team === teamName) {
+            if (players.pro_team === teamName) {
                 return true;
             }; console.log('finished');
         });
     }
 
     this.getPlayersByPosition = function (position) {
-        playersData.filter(function (player) {
-            if (player.position == position) {
-                return true;
-            }
+        console.log('in get players by position');
+        // console.log(playersData);
+        playersData.filter(function (players) {
+            if (players.position == position) {
+                console.log('at if statement')
+                //    console.log(players.fullname);
+               
+            };
         });
+        return (ListOfPlayers);
     }
 
+    this.testFunction = function (x) {
+        console.log(x);
+    }
     //     this.getPlayersByPosition = function (position) {
     //         var filteredPositions = [];
     //         counter=0;
@@ -64,12 +89,18 @@ function PlayersService(endpointUri, callback) {
 
         var localData = localStorage.getItem('playerData');
         if (localData) {
-
+            // debugger
             playersData = JSON.parse(localData);
+            console.log(playersData[0].fullname);
+
+            console.log('localdata var is true');
+
             return callback();
             //return will short-circuit the loadPlayersData function
             //this will prevent the code below from ever executing
         }
+
+        console.log('past localdata if statement')
 
         var url = "http://bcw-getter.herokuapp.com/?url=";
         var apiUrl = url + encodeURIComponent(endpointUri);
@@ -78,15 +109,12 @@ function PlayersService(endpointUri, callback) {
             playersData = data.body.players;
             console.log('Player Data Ready')
             console.log('Writing Player Data to localStorage')
-            localStorage.setItem('playersData', JSON.stringify(playersData))
+            localStorage.setItem('playerData', JSON.stringify(playersData))
+
             console.log('Finished Writing Player Data to localStorage')
-            // var retrobj = localStorage.getItem('playersData');
-            // console.log("retreobj: ", JSON.parse(retrobj));
-            //    teamSF();
-            // console.log(localStorage.playersData.lastname)
 
-            //   getPlayersByTeam("SF");
-
+            // var playersOnTeam = getPlayersByPosition("QB");
+            // console.log(playersOnTeam);
             callback()
         });
     }
