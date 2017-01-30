@@ -57,7 +57,7 @@ function PlayersController() {
             console.log(player.name);
             template +=
                 `<div class="player-card"> 
-                <img src="http://s.nflcdn.com/static/content/public/image/fantasy/transparent/200x200/" alt="football player" class="img">
+                <img src="https://s.nflcdn.com/static/content/public/image/fantasy/transparent/200x200/" alt="football player" class="img">
                 <h4><center>${player.name}</h4>
                 <h4>${player.position}</h4>
                 <h4>${player.number}</h4> 
